@@ -15,16 +15,16 @@ namespace RowerMiejski.Views
     public partial class ListaStacji : Form
     {
         private readonly Stacja _stacja;
-        private readonly StacjaController _controller;
+        private readonly ViewController _controller;
         public ListaStacji()
         {
             InitializeComponent();
-            _controller = new StacjaController();
+            _controller = new ViewController();
             RefreshDataGrid();
         }
         private void RefreshDataGrid()
         {
-            var dataTable = _controller.GetStacje();
+            var dataTable = _controller.getListaStacji();
             stacjeDataGridView.DataSource = dataTable;
         }
     }

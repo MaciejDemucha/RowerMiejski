@@ -30,6 +30,7 @@ namespace RowerMiejski.Views
         private void InitializeComponent()
         {
             this.stacjeDataGridView = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.stacjeDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,11 +44,21 @@ namespace RowerMiejski.Views
             this.stacjeDataGridView.Size = new System.Drawing.Size(672, 337);
             this.stacjeDataGridView.TabIndex = 0;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(310, 412);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(185, 29);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Wyświetl rowery na stacji";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // ListaStacji
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 465);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.stacjeDataGridView);
             this.Name = "ListaStacji";
             this.Text = "ListaStacji";
@@ -59,5 +70,6 @@ namespace RowerMiejski.Views
         #endregion
 
         private System.Windows.Forms.DataGridView stacjeDataGridView;
+        private System.Windows.Forms.Button button1;
     }
 }

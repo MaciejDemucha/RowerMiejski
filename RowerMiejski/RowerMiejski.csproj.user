@@ -4,5 +4,14 @@
     <Compile Update="Views\ListaStacji.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Views\Logowanie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\Rowery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\WidokGlownyUzytkownik.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

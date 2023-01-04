@@ -8,9 +8,9 @@ namespace RowerMiejski.Controllers
 {
     public static class ControllerFactory
     {
-        public static StacjaController CreateStacjaController()
+        public static ViewController CreateStacjaController()
         {
-            return new StacjaController();
+            return new ViewController();
         }
     }
 }
