@@ -37,8 +37,10 @@ namespace RowerMiejski.Views
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.buttonKonto = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.timeLabel = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -111,14 +113,15 @@ namespace RowerMiejski.Views
             this.button3.Text = "Wyświetl stacje";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // buttonKonto
             // 
-            this.button4.Location = new System.Drawing.Point(604, 360);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(97, 52);
-            this.button4.TabIndex = 9;
-            this.button4.Text = "Konto";
-            this.button4.UseVisualStyleBackColor = true;
+            this.buttonKonto.Location = new System.Drawing.Point(604, 360);
+            this.buttonKonto.Name = "buttonKonto";
+            this.buttonKonto.Size = new System.Drawing.Size(97, 52);
+            this.buttonKonto.TabIndex = 9;
+            this.buttonKonto.Text = "Konto";
+            this.buttonKonto.UseVisualStyleBackColor = true;
+            this.buttonKonto.Click += new System.EventHandler(this.buttonKonto_Click);
             // 
             // button5
             // 
@@ -129,13 +132,33 @@ namespace RowerMiejski.Views
             this.button5.Text = "Doładuj konto";
             this.button5.UseVisualStyleBackColor = true;
             // 
+            // timeLabel
+            // 
+            this.timeLabel.AutoSize = true;
+            this.timeLabel.Location = new System.Drawing.Point(261, 236);
+            this.timeLabel.Name = "timeLabel";
+            this.timeLabel.Size = new System.Drawing.Size(63, 20);
+            this.timeLabel.TabIndex = 11;
+            this.timeLabel.Text = "00:00:00";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(671, 58);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(67, 20);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "000.00 zł";
+            // 
             // WidokGlownyUzytkownik
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.timeLabel);
             this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.buttonKonto);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -146,6 +169,7 @@ namespace RowerMiejski.Views
             this.Controls.Add(this.label1);
             this.Name = "WidokGlownyUzytkownik";
             this.Text = "WidokGlownyUzytkownik";
+            this.Load += new System.EventHandler(this.WidokGlownyUzytkownik_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -161,7 +185,9 @@ namespace RowerMiejski.Views
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button buttonKonto;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Label timeLabel;
+        private System.Windows.Forms.Label label5;
     }
 }

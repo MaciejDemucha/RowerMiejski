@@ -23,3 +23,13 @@ C:\Users\macie\source\repos\RowerMiejski\RowerMiejski\obj\Debug\net5.0-windows\R
 C:\Users\macie\source\repos\RowerMiejski\RowerMiejski\obj\Debug\net5.0-windows\ref\RowerMiejski.dll
 C:\Users\macie\source\repos\RowerMiejski\RowerMiejski\obj\Debug\net5.0-windows\RowerMiejski.pdb
 C:\Users\macie\source\repos\RowerMiejski\RowerMiejski\obj\Debug\net5.0-windows\RowerMiejski.genruntimeconfig.cache
+C:\Users\macie\source\repos\RowerMiejski\RowerMiejski\obj\Debug\net5.0-windows\RowerMiejski.Views.DaneOsobiste.resources
+C:\Users\macie\source\repos\RowerMiejski\RowerMiejski\obj\Debug\net5.0-windows\RowerMiejski.Views.Logowanie.resources
+C:\Users\macie\source\repos\RowerMiejski\RowerMiejski\obj\Debug\net5.0-windows\RowerMiejski.Views.Rowery.resources
+C:\Users\macie\source\repos\RowerMiejski\RowerMiejski\obj\Debug\net5.0-windows\RowerMiejski.Views.TypyRowerow.resources
+C:\Users\macie\source\repos\RowerMiejski\RowerMiejski\obj\Debug\net5.0-windows\RowerMiejski.Views.Usterki.resources
+C:\Users\macie\source\repos\RowerMiejski\RowerMiejski\obj\Debug\net5.0-windows\RowerMiejski.Views.Uzytkownicy.resources
+C:\Users\macie\source\repos\RowerMiejski\RowerMiejski\obj\Debug\net5.0-windows\RowerMiejski.Views.WidokGlownyPracownik.resources
+C:\Users\macie\source\repos\RowerMiejski\RowerMiejski\obj\Debug\net5.0-windows\RowerMiejski.Views.WidokGlownyUzytkownik.resources
+C:\Users\macie\source\repos\RowerMiejski\RowerMiejski\obj\Debug\net5.0-windows\RowerMiejski.Views.WyborStacji.resources
+C:\Users\macie\source\repos\RowerMiejski\RowerMiejski\obj\Debug\net5.0-windows\RowerMiejski.Views.Wypozyczenia.resources
