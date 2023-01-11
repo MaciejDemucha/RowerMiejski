@@ -16,15 +16,15 @@ namespace RowerMiejski.Views
     {
         private readonly Stacja _stacja;
         private readonly ViewController _controller;
-        public ListaStacji()
+        public ListaStacji(String connectionString)
         {
             InitializeComponent();
-            _controller = new ViewController();
+            _controller = new ViewController(connectionString);
             RefreshDataGrid();
         }
         private void RefreshDataGrid()
         {
-            var dataTable = _controller.getListaStacji();
+            var dataTable = _controller.getListaUsterek();
             stacjeDataGridView.DataSource = dataTable;
         }
     }

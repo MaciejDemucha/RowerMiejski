@@ -18,7 +18,15 @@ namespace RowerMiejski
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new WidokGlownyUzytkownik());
+            try
+            {
+                Application.Run(new Logowanie());
+            }
+            catch(System.Data.SqlClient.SqlException e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            
         }
     }
 }

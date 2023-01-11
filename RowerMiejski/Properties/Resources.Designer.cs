@@ -61,7 +61,7 @@ namespace RowerMiejski.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Server=LAPTOP-S2A0N94M\DEMUCHASQL;Database=RowerMiejski;Trusted_Connection=True;.
+        ///   Looks up a localized string similar to Server=LAPTOP-S2A0N94M\DEMUCHASQL;Database=RowerMiejski;User ID=Pracownik123;Password=1234;.
         /// </summary>
         internal static string ConnectionString {
             get {

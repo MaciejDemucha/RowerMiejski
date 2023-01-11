@@ -9,6 +9,16 @@ namespace RowerMiejski.Controllers
 {
     public abstract class Controller
     {
-        protected readonly SqlConnection Connection = new(Properties.Resources.ConnectionString);
+        protected SqlConnection Connection = new(Properties.Resources.ConnectionString);
+
+        /*SqlConnection conn = new SqlConnection(
+    new SqlConnectionStringBuilder()
+    {
+        DataSource = "ServerName",
+        InitialCatalog = "DatabaseName",
+        UserID = "UserName",
+        Password = "UserPassword"
+    }.ConnectionString
+);*/
     }
 }

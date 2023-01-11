@@ -10,6 +10,10 @@ namespace RowerMiejski.Controllers
 {
     public class ViewController : Controller
     {
+        public ViewController(String connectionString)
+        {
+            Connection = new SqlConnection(connectionString);
+        }
         public DataTable getListaStacji()
         {
             var query = "EXEC wyswietl_stacje";
