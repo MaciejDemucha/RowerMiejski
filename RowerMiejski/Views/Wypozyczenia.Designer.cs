@@ -35,11 +35,16 @@ namespace RowerMiejski.Views
             // 
             // dataGridViewHistoria
             // 
+            this.dataGridViewHistoria.AllowUserToAddRows = false;
+            this.dataGridViewHistoria.AllowUserToDeleteRows = false;
             this.dataGridViewHistoria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewHistoria.Location = new System.Drawing.Point(58, 29);
             this.dataGridViewHistoria.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridViewHistoria.MultiSelect = false;
             this.dataGridViewHistoria.Name = "dataGridViewHistoria";
+            this.dataGridViewHistoria.ReadOnly = true;
             this.dataGridViewHistoria.RowHeadersWidth = 51;
+            this.dataGridViewHistoria.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewHistoria.Size = new System.Drawing.Size(576, 226);
             this.dataGridViewHistoria.TabIndex = 0;
             // 

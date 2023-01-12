@@ -29,57 +29,66 @@ namespace RowerMiejski.Views
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewRowery = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRowery)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dataGridViewRowery
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(68, 32);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(662, 290);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridViewRowery.AllowUserToAddRows = false;
+            this.dataGridViewRowery.AllowUserToDeleteRows = false;
+            this.dataGridViewRowery.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewRowery.Location = new System.Drawing.Point(60, 24);
+            this.dataGridViewRowery.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridViewRowery.MultiSelect = false;
+            this.dataGridViewRowery.Name = "dataGridViewRowery";
+            this.dataGridViewRowery.ReadOnly = true;
+            this.dataGridViewRowery.RowHeadersWidth = 51;
+            this.dataGridViewRowery.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewRowery.Size = new System.Drawing.Size(579, 218);
+            this.dataGridViewRowery.TabIndex = 0;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(197, 381);
+            this.button1.Location = new System.Drawing.Point(172, 286);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(104, 29);
+            this.button1.Size = new System.Drawing.Size(91, 22);
             this.button1.TabIndex = 1;
             this.button1.Text = "Wypożycz";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(461, 381);
+            this.button2.Location = new System.Drawing.Point(403, 286);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(120, 29);
+            this.button2.Size = new System.Drawing.Size(105, 22);
             this.button2.TabIndex = 2;
             this.button2.Text = "Zgłoś usterkę";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // Rowery
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(700, 338);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewRowery);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Rowery";
             this.Text = "Rowery";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRowery)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewRowery;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
     }

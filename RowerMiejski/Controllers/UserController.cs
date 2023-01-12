@@ -9,12 +9,21 @@ using System.Threading.Tasks;
 
 namespace RowerMiejski.Controllers
 {
-    class UserController : Controller
+    public class UserController : Controller
     {
         
         public UserController(SqlConnection connection)
         {
             Connection = connection;
+        }
+
+        public void doladuj(Double kwota)
+        {
+            var query = $"EXEC zaktualizuj_bilans @kwota = {kwota}";
+            Connection.Open();
+            var cmd = new SqlCommand(query, Connection);
+            cmd.ExecuteScalar();
+            Connection.Close();
         }
 
         public Double getBalans()

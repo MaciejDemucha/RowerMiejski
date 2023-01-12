@@ -33,12 +33,12 @@ namespace RowerMiejski.Views
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.textBoxMoney = new System.Windows.Forms.TextBox();
+            this.buttonZwrocRower = new System.Windows.Forms.Button();
             this.buttonHistory = new System.Windows.Forms.Button();
             this.buttonStacje = new System.Windows.Forms.Button();
             this.buttonKonto = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.buttonMoney = new System.Windows.Forms.Button();
             this.timeLabel = new System.Windows.Forms.Label();
             this.labelBalance = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -79,23 +79,24 @@ namespace RowerMiejski.Views
             this.label4.TabIndex = 3;
             this.label4.Text = "Stan konta:";
             // 
-            // textBox1
+            // textBoxMoney
             // 
-            this.textBox1.Location = new System.Drawing.Point(565, 106);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(110, 23);
-            this.textBox1.TabIndex = 5;
+            this.textBoxMoney.Location = new System.Drawing.Point(565, 106);
+            this.textBoxMoney.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxMoney.Name = "textBoxMoney";
+            this.textBoxMoney.Size = new System.Drawing.Size(110, 23);
+            this.textBoxMoney.TabIndex = 5;
             // 
-            // button1
+            // buttonZwrocRower
             // 
-            this.button1.Location = new System.Drawing.Point(120, 269);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(103, 39);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Zwróć rower";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonZwrocRower.Location = new System.Drawing.Point(120, 269);
+            this.buttonZwrocRower.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonZwrocRower.Name = "buttonZwrocRower";
+            this.buttonZwrocRower.Size = new System.Drawing.Size(103, 39);
+            this.buttonZwrocRower.TabIndex = 6;
+            this.buttonZwrocRower.Text = "Zwróć rower";
+            this.buttonZwrocRower.UseVisualStyleBackColor = true;
+            this.buttonZwrocRower.Click += new System.EventHandler(this.buttonZwrocRower_Click);
             // 
             // buttonHistory
             // 
@@ -130,15 +131,16 @@ namespace RowerMiejski.Views
             this.buttonKonto.UseVisualStyleBackColor = true;
             this.buttonKonto.Click += new System.EventHandler(this.buttonKonto_Click);
             // 
-            // button5
+            // buttonMoney
             // 
-            this.button5.Location = new System.Drawing.Point(437, 101);
-            this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(102, 30);
-            this.button5.TabIndex = 10;
-            this.button5.Text = "Doładuj konto";
-            this.button5.UseVisualStyleBackColor = true;
+            this.buttonMoney.Location = new System.Drawing.Point(437, 101);
+            this.buttonMoney.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonMoney.Name = "buttonMoney";
+            this.buttonMoney.Size = new System.Drawing.Size(102, 30);
+            this.buttonMoney.TabIndex = 10;
+            this.buttonMoney.Text = "Doładuj konto";
+            this.buttonMoney.UseVisualStyleBackColor = true;
+            this.buttonMoney.Click += new System.EventHandler(this.buttonMoney_Click);
             // 
             // timeLabel
             // 
@@ -165,12 +167,12 @@ namespace RowerMiejski.Views
             this.ClientSize = new System.Drawing.Size(700, 338);
             this.Controls.Add(this.labelBalance);
             this.Controls.Add(this.timeLabel);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.buttonMoney);
             this.Controls.Add(this.buttonKonto);
             this.Controls.Add(this.buttonStacje);
             this.Controls.Add(this.buttonHistory);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.buttonZwrocRower);
+            this.Controls.Add(this.textBoxMoney);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -190,12 +192,12 @@ namespace RowerMiejski.Views
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBoxMoney;
+        private System.Windows.Forms.Button buttonZwrocRower;
         private System.Windows.Forms.Button buttonHistory;
         private System.Windows.Forms.Button buttonStacje;
         private System.Windows.Forms.Button buttonKonto;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button buttonMoney;
         private System.Windows.Forms.Label timeLabel;
         private System.Windows.Forms.Label labelBalance;
     }

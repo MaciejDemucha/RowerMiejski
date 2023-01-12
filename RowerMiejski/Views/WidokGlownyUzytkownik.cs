@@ -29,7 +29,7 @@ namespace RowerMiejski.Views
 
         private void setBalanceLabel()
         {
-            labelBalance.Text = _user.Balans + " zł";
+            labelBalance.Text = _controller.getBalans() + " zł";
         }
 
         private void buttonKonto_Click(object sender, EventArgs e)
@@ -48,6 +48,26 @@ namespace RowerMiejski.Views
         {
             var form = new Wypozyczenia(_controller.getConnection());
             form.ShowDialog();
+        }
+
+        private void buttonMoney_Click(object sender, EventArgs e)
+        {
+            Double kwota;
+            bool success = double.TryParse(textBoxMoney.Text, out kwota);
+            if (success)
+            {
+                _controller.doladuj(kwota);
+            }
+            else
+            {
+                MessageBox.Show("Nieprawidłowa wartość");
+            }
+            setBalanceLabel();
+        }
+
+        private void buttonZwrocRower_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void WidokGlownyUzytkownik_Load(object sender, EventArgs e)

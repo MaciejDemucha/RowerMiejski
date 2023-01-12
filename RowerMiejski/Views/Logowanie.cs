@@ -27,12 +27,16 @@ namespace RowerMiejski.Views
         {
             String username = textBoxName.Text;
             String password = textBoxPassword.Text;
+            var form = new Form();
 
             _controller.login(username, password);
            
 
             this.Hide();
-            var form = new WidokGlownyUzytkownik(_controller.getConnection());
+            if (checkBoxEmployee.CheckState == CheckState.Unchecked)
+                form = new WidokGlownyUzytkownik(_controller.getConnection());
+            else
+                form = new WidokGlownyPracownik(_controller.getConnection());
             form.ShowDialog();
         }
     }

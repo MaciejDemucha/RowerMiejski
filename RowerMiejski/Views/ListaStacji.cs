@@ -28,5 +28,20 @@ namespace RowerMiejski.Views
             var dataTable = _controller.getListaStacji();
             stacjeDataGridView.DataSource = dataTable;
         }
+
+        private void buttonShowBikes_Click(object sender, EventArgs e)
+        {
+            var id = stacjeDataGridView.SelectedRows[0].Cells[0].Value;
+            
+            if (id != null)
+            {
+                var form = new Rowery(_controller.getConnection(), (int)id);
+                form.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Wybierz stację");
+            }
+        }
     }
 }

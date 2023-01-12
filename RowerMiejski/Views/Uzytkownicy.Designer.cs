@@ -29,46 +29,50 @@ namespace RowerMiejski.Views
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dataGridViewUsers = new System.Windows.Forms.DataGridView();
+            this.buttonWypozyczenia = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUsers)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dataGridViewUsers
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(49, 29);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(706, 301);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridViewUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewUsers.Location = new System.Drawing.Point(43, 22);
+            this.dataGridViewUsers.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridViewUsers.Name = "dataGridViewUsers";
+            this.dataGridViewUsers.RowHeadersWidth = 51;
+            this.dataGridViewUsers.Size = new System.Drawing.Size(618, 226);
+            this.dataGridViewUsers.TabIndex = 0;
             // 
-            // button1
+            // buttonWypozyczenia
             // 
-            this.button1.Location = new System.Drawing.Point(302, 364);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(170, 50);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Wypożyczenia klienta";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonWypozyczenia.Location = new System.Drawing.Point(264, 273);
+            this.buttonWypozyczenia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonWypozyczenia.Name = "buttonWypozyczenia";
+            this.buttonWypozyczenia.Size = new System.Drawing.Size(149, 38);
+            this.buttonWypozyczenia.TabIndex = 1;
+            this.buttonWypozyczenia.Text = "Wypożyczenia klienta";
+            this.buttonWypozyczenia.UseVisualStyleBackColor = true;
+            this.buttonWypozyczenia.Click += new System.EventHandler(this.buttonWypozyczenia_Click);
             // 
             // Uzytkownicy
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(700, 338);
+            this.Controls.Add(this.buttonWypozyczenia);
+            this.Controls.Add(this.dataGridViewUsers);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Uzytkownicy";
             this.Text = "Uzytkownicy";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUsers)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView dataGridViewUsers;
+        private System.Windows.Forms.Button buttonWypozyczenia;
     }
 }

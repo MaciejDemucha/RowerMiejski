@@ -29,68 +29,78 @@ namespace RowerMiejski.Views
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.buttonKlienci = new System.Windows.Forms.Button();
+            this.buttonStacje = new System.Windows.Forms.Button();
+            this.buttonUsterki = new System.Windows.Forms.Button();
+            this.buttonTypy = new System.Windows.Forms.Button();
+            this.buttonKonto = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // buttonKlienci
             // 
-            this.button1.Location = new System.Drawing.Point(58, 52);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(138, 43);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Wyświetl klientów";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonKlienci.Location = new System.Drawing.Point(51, 39);
+            this.buttonKlienci.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonKlienci.Name = "buttonKlienci";
+            this.buttonKlienci.Size = new System.Drawing.Size(121, 32);
+            this.buttonKlienci.TabIndex = 0;
+            this.buttonKlienci.Text = "Wyświetl klientów";
+            this.buttonKlienci.UseVisualStyleBackColor = true;
+            this.buttonKlienci.Click += new System.EventHandler(this.buttonKlienci_Click);
             // 
-            // button2
+            // buttonStacje
             // 
-            this.button2.Location = new System.Drawing.Point(58, 125);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(138, 45);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Wyświetl stacje";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonStacje.Location = new System.Drawing.Point(51, 94);
+            this.buttonStacje.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonStacje.Name = "buttonStacje";
+            this.buttonStacje.Size = new System.Drawing.Size(121, 34);
+            this.buttonStacje.TabIndex = 1;
+            this.buttonStacje.Text = "Wyświetl stacje";
+            this.buttonStacje.UseVisualStyleBackColor = true;
+            this.buttonStacje.Click += new System.EventHandler(this.buttonStacje_Click);
             // 
-            // button3
+            // buttonUsterki
             // 
-            this.button3.Location = new System.Drawing.Point(58, 205);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(138, 41);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Wyświetl usterki";
-            this.button3.UseVisualStyleBackColor = true;
+            this.buttonUsterki.Location = new System.Drawing.Point(51, 154);
+            this.buttonUsterki.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonUsterki.Name = "buttonUsterki";
+            this.buttonUsterki.Size = new System.Drawing.Size(121, 31);
+            this.buttonUsterki.TabIndex = 2;
+            this.buttonUsterki.Text = "Wyświetl usterki";
+            this.buttonUsterki.UseVisualStyleBackColor = true;
+            this.buttonUsterki.Click += new System.EventHandler(this.buttonUsterki_Click);
             // 
-            // button4
+            // buttonTypy
             // 
-            this.button4.Location = new System.Drawing.Point(58, 287);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(138, 53);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Wyświetl typy rowerów i ceny";
-            this.button4.UseVisualStyleBackColor = true;
+            this.buttonTypy.Location = new System.Drawing.Point(51, 215);
+            this.buttonTypy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonTypy.Name = "buttonTypy";
+            this.buttonTypy.Size = new System.Drawing.Size(121, 40);
+            this.buttonTypy.TabIndex = 3;
+            this.buttonTypy.Text = "Wyświetl typy rowerów i ceny";
+            this.buttonTypy.UseVisualStyleBackColor = true;
+            this.buttonTypy.Click += new System.EventHandler(this.buttonTypy_Click);
             // 
-            // button5
+            // buttonKonto
             // 
-            this.button5.Location = new System.Drawing.Point(431, 52);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(94, 36);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "Konto";
-            this.button5.UseVisualStyleBackColor = true;
+            this.buttonKonto.Location = new System.Drawing.Point(377, 39);
+            this.buttonKonto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonKonto.Name = "buttonKonto";
+            this.buttonKonto.Size = new System.Drawing.Size(82, 27);
+            this.buttonKonto.TabIndex = 4;
+            this.buttonKonto.Text = "Konto";
+            this.buttonKonto.UseVisualStyleBackColor = true;
             // 
             // WidokGlownyPracownik
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(606, 396);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(530, 297);
+            this.Controls.Add(this.buttonKonto);
+            this.Controls.Add(this.buttonTypy);
+            this.Controls.Add(this.buttonUsterki);
+            this.Controls.Add(this.buttonStacje);
+            this.Controls.Add(this.buttonKlienci);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "WidokGlownyPracownik";
             this.Text = "WidokGlownyPracownik";
             this.ResumeLayout(false);
@@ -99,10 +109,10 @@ namespace RowerMiejski.Views
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button buttonKlienci;
+        private System.Windows.Forms.Button buttonStacje;
+        private System.Windows.Forms.Button buttonUsterki;
+        private System.Windows.Forms.Button buttonTypy;
+        private System.Windows.Forms.Button buttonKonto;
     }
 }
