@@ -32,6 +32,7 @@ namespace RowerMiejski.Views
             this.usterkiDataGridView = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.buttonMojeUsterki = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.usterkiDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,7 +48,7 @@ namespace RowerMiejski.Views
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(171, 278);
+            this.button1.Location = new System.Drawing.Point(278, 276);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(91, 28);
@@ -57,7 +58,7 @@ namespace RowerMiejski.Views
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(432, 278);
+            this.button2.Location = new System.Drawing.Point(499, 276);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(93, 28);
@@ -65,11 +66,21 @@ namespace RowerMiejski.Views
             this.button2.Text = "Odrzuć";
             this.button2.UseVisualStyleBackColor = true;
             // 
+            // buttonMojeUsterki
+            // 
+            this.buttonMojeUsterki.Location = new System.Drawing.Point(66, 276);
+            this.buttonMojeUsterki.Name = "buttonMojeUsterki";
+            this.buttonMojeUsterki.Size = new System.Drawing.Size(85, 26);
+            this.buttonMojeUsterki.TabIndex = 3;
+            this.buttonMojeUsterki.Text = "Moje usterki";
+            this.buttonMojeUsterki.UseVisualStyleBackColor = true;
+            // 
             // Usterki
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(700, 338);
+            this.Controls.Add(this.buttonMojeUsterki);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.usterkiDataGridView);
@@ -86,5 +97,6 @@ namespace RowerMiejski.Views
         private System.Windows.Forms.DataGridView usterkiDataGridView;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonMojeUsterki;
     }
 }

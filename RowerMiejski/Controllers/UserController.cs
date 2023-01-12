@@ -26,6 +26,33 @@ namespace RowerMiejski.Controllers
             Connection.Close();
         }
 
+        public void wypozyczRower(int id)
+        {
+            var query = $"EXEC wypozycz_rower @rower = {id}";
+            Connection.Open();
+            var cmd = new SqlCommand(query, Connection);
+            cmd.ExecuteScalar();
+            Connection.Close();
+        }
+
+        public void zglosUsterke(int id)
+        {
+            var query = $"EXEC zglos_usterke @rower = {id}";
+            Connection.Open();
+            var cmd = new SqlCommand(query, Connection);
+            cmd.ExecuteScalar();
+            Connection.Close();
+        }
+
+        public void zwrocRower(int idRower, int idStacja)
+        {
+            var query = $"EXEC zwroc_rower @rower = {idRower}, @stacja = {idStacja}";
+            Connection.Open();
+            var cmd = new SqlCommand(query, Connection);
+            cmd.ExecuteScalar();
+            Connection.Close();
+        }
+
         public Double getBalans()
         {
             var query = "EXEC wyswietl_dane";
@@ -39,17 +66,6 @@ namespace RowerMiejski.Controllers
                 output = Math.Round(reader.GetDouble(6), 2);
             }
                 Connection.Close();
-            return output;
-        }
-     
-
-        public int GetUzytkownikId(string username)
-        {
-            var query = $"SELECT Id FROM Klient WHERE Nazwa='{username}';";
-            Connection.Open();
-            var cmd = new SqlCommand(query, Connection);
-            var output = (int)cmd.ExecuteScalar();
-            Connection.Close();
             return output;
         }
 

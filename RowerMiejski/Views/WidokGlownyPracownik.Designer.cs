@@ -71,7 +71,7 @@ namespace RowerMiejski.Views
             // 
             // buttonTypy
             // 
-            this.buttonTypy.Location = new System.Drawing.Point(51, 215);
+            this.buttonTypy.Location = new System.Drawing.Point(51, 212);
             this.buttonTypy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonTypy.Name = "buttonTypy";
             this.buttonTypy.Size = new System.Drawing.Size(121, 40);
