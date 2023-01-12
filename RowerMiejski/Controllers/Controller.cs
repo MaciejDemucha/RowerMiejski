@@ -11,14 +11,11 @@ namespace RowerMiejski.Controllers
     {
         protected SqlConnection Connection = new(Properties.Resources.ConnectionString);
 
-        /*SqlConnection conn = new SqlConnection(
-    new SqlConnectionStringBuilder()
-    {
-        DataSource = "ServerName",
-        InitialCatalog = "DatabaseName",
-        UserID = "UserName",
-        Password = "UserPassword"
-    }.ConnectionString
-);*/
+        public SqlConnection getConnection()
+        {
+            return Connection;
+        }
+
+
     }
 }

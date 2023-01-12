@@ -29,34 +29,36 @@ namespace RowerMiejski.Views
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dataGridViewHistoria = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHistoria)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dataGridViewHistoria
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(66, 39);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(658, 302);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridViewHistoria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewHistoria.Location = new System.Drawing.Point(58, 29);
+            this.dataGridViewHistoria.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridViewHistoria.Name = "dataGridViewHistoria";
+            this.dataGridViewHistoria.RowHeadersWidth = 51;
+            this.dataGridViewHistoria.Size = new System.Drawing.Size(576, 226);
+            this.dataGridViewHistoria.TabIndex = 0;
             // 
             // Wypozyczenia
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(700, 338);
+            this.Controls.Add(this.dataGridViewHistoria);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Wypozyczenia";
             this.Text = "Wypozyczenia";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHistoria)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewHistoria;
     }
 }

@@ -1,7 +1,10 @@
-﻿using System;
+﻿using RowerMiejski.Controllers;
+using RowerMiejski.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -14,15 +17,37 @@ namespace RowerMiejski.Views
     {
         int h, m, s;
         System.Timers.Timer timer;
-        public WidokGlownyUzytkownik()
+        private readonly UserController _controller; 
+        private readonly Uzytkownik _user;
+        public WidokGlownyUzytkownik(SqlConnection connection)
         {
-            InitializeComponent();
+            InitializeComponent();         
+            _controller = new UserController(connection);
+            _user = new Uzytkownik(/*_controller.GetUzytkownikId(_username),*/ _controller.getUsername(), _controller.getName(), _controller.getSurname(), _controller.getPhone(), _controller.getEmail(), _controller.getBirthDate(), _controller.getBalans());
+            setBalanceLabel();
+        }
+
+        private void setBalanceLabel()
+        {
+            labelBalance.Text = _user.Balans + " zł";
         }
 
         private void buttonKonto_Click(object sender, EventArgs e)
         {
-            //tymczasowo
-            timer.Start();
+            var form = new DaneOsobiste(_controller.getConnection(), _user);
+            form.ShowDialog();
+        }
+
+        private void buttonStacje_Click(object sender, EventArgs e)
+        {
+            var form = new ListaStacji(_controller.getConnection());
+            form.ShowDialog();
+        }
+
+        private void buttonHistory_Click(object sender, EventArgs e)
+        {
+            var form = new Wypozyczenia(_controller.getConnection());
+            form.ShowDialog();
         }
 
         private void WidokGlownyUzytkownik_Load(object sender, EventArgs e)
@@ -30,6 +55,7 @@ namespace RowerMiejski.Views
             timer = new System.Timers.Timer();
             timer.Interval = 1000;
             timer.Elapsed += OnTimeEvent;
+           // timer.Start();
         }
         private void OnTimeEvent(object sender, System.Timers.ElapsedEventArgs e)
         {

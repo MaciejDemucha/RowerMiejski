@@ -9,15 +9,11 @@ namespace RowerMiejski.Controllers
 {
     class LoginController : Controller
     {
-        public void logIn(String username, string password)
+        public void login(String username, string password)
         {
-            String conn = $@"Server=LAPTOP-S2A0N94M\DEMUCHASQL;Database=RowerMiejski;Uid='{username}';Pwd='{password}'";
+            String conn = $@"Server=LAPTOP-S2A0N94M\DEMUCHASQL;Database=RowerMiejski;Uid='{username}';Pwd='{password}';";
             Connection = new SqlConnection(conn);
         }
 
-        public String getConnectionString()
-        {
-            return Connection.ConnectionString;
-        }
     }
 }

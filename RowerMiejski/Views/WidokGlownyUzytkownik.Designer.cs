@@ -35,89 +35,96 @@ namespace RowerMiejski.Views
             this.label4 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.buttonHistory = new System.Windows.Forms.Button();
+            this.buttonStacje = new System.Windows.Forms.Button();
             this.buttonKonto = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.timeLabel = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.labelBalance = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(117, 109);
+            this.label1.Location = new System.Drawing.Point(102, 82);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(145, 20);
+            this.label1.Size = new System.Drawing.Size(116, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "Wypożyczony rower:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(117, 174);
+            this.label2.Location = new System.Drawing.Point(102, 130);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(114, 20);
+            this.label2.Size = new System.Drawing.Size(92, 15);
             this.label2.TabIndex = 1;
             this.label2.Text = "Cena za minutę:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(117, 236);
+            this.label3.Location = new System.Drawing.Point(102, 177);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(138, 20);
+            this.label3.Size = new System.Drawing.Size(110, 15);
             this.label3.TabIndex = 2;
             this.label3.Text = "Czas wypożyczenia:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(583, 58);
+            this.label4.Location = new System.Drawing.Point(510, 44);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(82, 20);
+            this.label4.Size = new System.Drawing.Size(66, 15);
             this.label4.TabIndex = 3;
             this.label4.Text = "Stan konta:";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(646, 142);
+            this.textBox1.Location = new System.Drawing.Point(565, 106);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(125, 27);
+            this.textBox1.Size = new System.Drawing.Size(110, 23);
             this.textBox1.TabIndex = 5;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(137, 359);
+            this.button1.Location = new System.Drawing.Point(120, 269);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(118, 52);
+            this.button1.Size = new System.Drawing.Size(103, 39);
             this.button1.TabIndex = 6;
             this.button1.Text = "Zwróć rower";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // buttonHistory
             // 
-            this.button2.Location = new System.Drawing.Point(295, 360);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(111, 51);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Historia wypożyczeń";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonHistory.Location = new System.Drawing.Point(258, 270);
+            this.buttonHistory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonHistory.Name = "buttonHistory";
+            this.buttonHistory.Size = new System.Drawing.Size(97, 38);
+            this.buttonHistory.TabIndex = 7;
+            this.buttonHistory.Text = "Historia wypożyczeń";
+            this.buttonHistory.UseVisualStyleBackColor = true;
+            this.buttonHistory.Click += new System.EventHandler(this.buttonHistory_Click);
             // 
-            // button3
+            // buttonStacje
             // 
-            this.button3.Location = new System.Drawing.Point(448, 360);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(105, 51);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "Wyświetl stacje";
-            this.button3.UseVisualStyleBackColor = true;
+            this.buttonStacje.Location = new System.Drawing.Point(392, 270);
+            this.buttonStacje.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonStacje.Name = "buttonStacje";
+            this.buttonStacje.Size = new System.Drawing.Size(92, 38);
+            this.buttonStacje.TabIndex = 8;
+            this.buttonStacje.Text = "Wyświetl stacje";
+            this.buttonStacje.UseVisualStyleBackColor = true;
+            this.buttonStacje.Click += new System.EventHandler(this.buttonStacje_Click);
             // 
             // buttonKonto
             // 
-            this.buttonKonto.Location = new System.Drawing.Point(604, 360);
+            this.buttonKonto.Location = new System.Drawing.Point(528, 270);
+            this.buttonKonto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonKonto.Name = "buttonKonto";
-            this.buttonKonto.Size = new System.Drawing.Size(97, 52);
+            this.buttonKonto.Size = new System.Drawing.Size(85, 39);
             this.buttonKonto.TabIndex = 9;
             this.buttonKonto.Text = "Konto";
             this.buttonKonto.UseVisualStyleBackColor = true;
@@ -125,9 +132,10 @@ namespace RowerMiejski.Views
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(499, 135);
+            this.button5.Location = new System.Drawing.Point(437, 101);
+            this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(116, 40);
+            this.button5.Size = new System.Drawing.Size(102, 30);
             this.button5.TabIndex = 10;
             this.button5.Text = "Doładuj konto";
             this.button5.UseVisualStyleBackColor = true;
@@ -135,38 +143,39 @@ namespace RowerMiejski.Views
             // timeLabel
             // 
             this.timeLabel.AutoSize = true;
-            this.timeLabel.Location = new System.Drawing.Point(261, 236);
+            this.timeLabel.Location = new System.Drawing.Point(228, 177);
             this.timeLabel.Name = "timeLabel";
-            this.timeLabel.Size = new System.Drawing.Size(63, 20);
+            this.timeLabel.Size = new System.Drawing.Size(49, 15);
             this.timeLabel.TabIndex = 11;
             this.timeLabel.Text = "00:00:00";
             // 
-            // label5
+            // labelBalance
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(671, 58);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(67, 20);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "000.00 zł";
+            this.labelBalance.AutoSize = true;
+            this.labelBalance.Location = new System.Drawing.Point(587, 44);
+            this.labelBalance.Name = "labelBalance";
+            this.labelBalance.Size = new System.Drawing.Size(51, 15);
+            this.labelBalance.TabIndex = 12;
+            this.labelBalance.Text = "000.00 zł";
             // 
             // WidokGlownyUzytkownik
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label5);
+            this.ClientSize = new System.Drawing.Size(700, 338);
+            this.Controls.Add(this.labelBalance);
             this.Controls.Add(this.timeLabel);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.buttonKonto);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.buttonStacje);
+            this.Controls.Add(this.buttonHistory);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "WidokGlownyUzytkownik";
             this.Text = "WidokGlownyUzytkownik";
             this.Load += new System.EventHandler(this.WidokGlownyUzytkownik_Load);
@@ -183,11 +192,11 @@ namespace RowerMiejski.Views
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button buttonHistory;
+        private System.Windows.Forms.Button buttonStacje;
         private System.Windows.Forms.Button buttonKonto;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label timeLabel;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label labelBalance;
     }
 }

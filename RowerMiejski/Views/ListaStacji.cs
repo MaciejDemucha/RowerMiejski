@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -16,15 +17,15 @@ namespace RowerMiejski.Views
     {
         private readonly Stacja _stacja;
         private readonly ViewController _controller;
-        public ListaStacji(String connectionString)
+        public ListaStacji(SqlConnection connection)
         {
             InitializeComponent();
-            _controller = new ViewController(connectionString);
+            _controller = new ViewController(connection);
             RefreshDataGrid();
         }
         private void RefreshDataGrid()
         {
-            var dataTable = _controller.getListaUsterek();
+            var dataTable = _controller.getListaStacji();
             stacjeDataGridView.DataSource = dataTable;
         }
     }

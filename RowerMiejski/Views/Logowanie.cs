@@ -20,6 +20,7 @@ namespace RowerMiejski.Views
         {
             InitializeComponent();
             _controller = new LoginController();
+            textBoxPassword.PasswordChar = '*';
         }
 
         private void buttonLogin_Click(object sender, EventArgs e)
@@ -27,14 +28,11 @@ namespace RowerMiejski.Views
             String username = textBoxName.Text;
             String password = textBoxPassword.Text;
 
-            _controller.logIn(username, password);
-           String connectionString =  _controller.getConnectionString();
-
-            MessageBox.Show(connectionString);
-
+            _controller.login(username, password);
+           
 
             this.Hide();
-            var form = new ListaStacji(connectionString);
+            var form = new WidokGlownyUzytkownik(_controller.getConnection());
             form.ShowDialog();
         }
     }
