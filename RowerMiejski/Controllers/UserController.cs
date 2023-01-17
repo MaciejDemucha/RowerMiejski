@@ -168,8 +168,16 @@ namespace RowerMiejski.Controllers
             return output;
         }
 
-        public bool UpdateUzytkownik(Uzytkownik user)
+        public bool UpdateUzytkownik(Uzytkownik user, string oldUsername)
         {
+            var query = $"UPDATE dbo.klient_view_customer " +
+                $"SET Nazwa = '{user.Nazwa}', Imie = '{user.Imie}', Nazwisko = '{user.Nazwisko}', Telefon = '{user.Telefon}', " +
+                $"Email = '{user.Email}', Data_urodzenia = '{user.DataUrodzenia}' " +
+                $"WHERE Nazwa = '{oldUsername}'; ";
+            Connection.Open();
+            var cmd = new SqlCommand(query, Connection);
+            var reader = cmd.ExecuteScalar();
+            Connection.Close();
             return true;
         }
 

@@ -29,34 +29,35 @@ namespace RowerMiejski.Views
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.comboBoxStacje = new System.Windows.Forms.ComboBox();
+            this.buttonChoose = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // comboBox1
+            // comboBoxStacje
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(53, 67);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(222, 28);
-            this.comboBox1.TabIndex = 0;
+            this.comboBoxStacje.FormattingEnabled = true;
+            this.comboBoxStacje.Location = new System.Drawing.Point(53, 67);
+            this.comboBoxStacje.Name = "comboBoxStacje";
+            this.comboBoxStacje.Size = new System.Drawing.Size(222, 28);
+            this.comboBoxStacje.TabIndex = 0;
             // 
-            // button1
+            // buttonChoose
             // 
-            this.button1.Location = new System.Drawing.Point(107, 365);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 29);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Wybierz";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonChoose.Location = new System.Drawing.Point(107, 365);
+            this.buttonChoose.Name = "buttonChoose";
+            this.buttonChoose.Size = new System.Drawing.Size(94, 29);
+            this.buttonChoose.TabIndex = 1;
+            this.buttonChoose.Text = "Wybierz";
+            this.buttonChoose.UseVisualStyleBackColor = true;
+            this.buttonChoose.Click += new System.EventHandler(this.buttonChoose_Click);
             // 
             // WyborStacji
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(329, 450);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.buttonChoose);
+            this.Controls.Add(this.comboBoxStacje);
             this.Name = "WyborStacji";
             this.Text = "WyborStacji";
             this.ResumeLayout(false);
@@ -65,7 +66,7 @@ namespace RowerMiejski.Views
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox comboBoxStacje;
+        private System.Windows.Forms.Button buttonChoose;
     }
 }

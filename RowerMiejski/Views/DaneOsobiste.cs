@@ -16,24 +16,42 @@ namespace RowerMiejski.Views
     public partial class DaneOsobiste : Form
     {
         private readonly UserController _controller;
-        private readonly Uzytkownik _user;
+        private Uzytkownik _user;
+        private string oldUsername;
         public DaneOsobiste(SqlConnection connection, Uzytkownik user)
         {
             InitializeComponent();
             _user = user;
+            setTextboxes();
+            oldUsername = textBoxUsername.Text;
             _controller = new UserController(connection);
+        }
 
-            textBoxUsername.Text = user.Nazwa;
-            textBoxName.Text = user.Imie;
-            textBoxSurname.Text = user.Nazwisko;
-            textBoxPhone.Text = user.Telefon.ToString();
-            textBoxEmail.Text = user.Email;
-            textBoxDate.Text = user.DataUrodzenia.ToString();
+        public void setTextboxes()
+        {
+            textBoxUsername.Text = _user.Nazwa;
+            textBoxName.Text = _user.Imie;
+            textBoxSurname.Text = _user.Nazwisko;
+            textBoxPhone.Text = _user.Telefon.ToString();
+            textBoxEmail.Text = _user.Email;
+            textBoxDate.Text = _user.DataUrodzenia.ToString();
+        }
+
+        public void saveChanges()
+        {
+             _user.Nazwa = textBoxUsername.Text;
+             _user.Imie = textBoxName.Text;
+             _user.Nazwisko = textBoxSurname.Text;
+             _user.Telefon = Int32.Parse(textBoxPhone.Text);
+             _user.Email = textBoxEmail.Text;
+             _user.DataUrodzenia = DateTime.Parse(textBoxDate.Text);
         }
 
         private void buttonChange_Click(object sender, EventArgs e)
         {
-           
+            saveChanges();
+            _controller.UpdateUzytkownik(_user, oldUsername);
+            oldUsername = textBoxUsername.Text;
         }
     }
 }

@@ -14,20 +14,50 @@ namespace RowerMiejski.Views
 {
     public partial class Rowery : Form
     {
-        private readonly ViewController _controller;
+        private readonly ViewController _viewController;
+        private readonly UserController _userController;
         private readonly int _id;
         public Rowery(SqlConnection connection, int id)
         {
             InitializeComponent();
-            _controller = new ViewController(connection);
+            _viewController = new ViewController(connection);
+            _userController = new UserController(connection);
             _id = id;
             RefreshDataGrid();
         }
 
         private void RefreshDataGrid()
         {
-            var dataTable = _controller.getListaRowerow(_id);
+            var dataTable = _viewController.getListaRowerow(_id);
             dataGridViewRowery.DataSource = dataTable;
+        }
+
+        private void buttonWypozycz_Click(object sender, EventArgs e)
+        {
+            var id = dataGridViewRowery.SelectedRows[0].Cells[0].Value;
+            if (id != null)
+            {
+                _userController.wypozyczRower((int)id);
+                RefreshDataGrid();
+            }
+            else
+            {
+                MessageBox.Show("Wybierz rower");
+            }
+        }
+
+        private void buttonUsterka_Click(object sender, EventArgs e)
+        {
+            var id = dataGridViewRowery.SelectedRows[0].Cells[0].Value;
+            if (id != null)
+            {
+                _userController.zglosUsterke((int)id);
+                RefreshDataGrid();
+            }
+            else
+            {
+                MessageBox.Show("Wybierz rower");
+            }
         }
     }
 }

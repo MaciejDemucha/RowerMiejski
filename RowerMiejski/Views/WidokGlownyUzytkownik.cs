@@ -67,7 +67,10 @@ namespace RowerMiejski.Views
 
         private void buttonZwrocRower_Click(object sender, EventArgs e)
         {
-
+            using(var form = new WyborStacji(_controller.getConnection()))
+            {
+                form.ShowDialog();
+            }
         }
 
         private void WidokGlownyUzytkownik_Load(object sender, EventArgs e)
