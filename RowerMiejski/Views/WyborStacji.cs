@@ -15,12 +15,19 @@ namespace RowerMiejski.Views
     public partial class WyborStacji : Form
     {
         private readonly ViewController _controller;
+        private List<int> idList = new List<int>();
+        private int idStacji;
+        public int stacja
+        {
+            get { return idStacji; }
+        }
         public WyborStacji(SqlConnection connection)
         {
             InitializeComponent();
             _controller = new ViewController(connection);
 
             setComboBox();
+            buttonChoose.DialogResult = DialogResult.OK;
         }
 
         private void setComboBox()
@@ -29,14 +36,19 @@ namespace RowerMiejski.Views
             int size = dataTable.Rows.Count;
             for(int i = 0; i < size; i++)
             {
-                string hutt = dataTable.Rows[i]["Ulica"].ToString();
-                comboBoxStacje.Items.Add(hutt);
+                string street = dataTable.Rows[i]["Ulica"].ToString();
+                int id = Int32.Parse(dataTable.Rows[i]["Id"].ToString());
+                idList.Add(id);
+                comboBoxStacje.Items.Add(street);
             }
            
         }
 
         private void buttonChoose_Click(object sender, EventArgs e)
         {
+            int chosenStation = comboBoxStacje.SelectedIndex;
+            idStacji = idList.ElementAt(chosenStation);
+            this.Close();
 
         }
     }

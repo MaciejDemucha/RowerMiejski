@@ -29,8 +29,8 @@ namespace RowerMiejski.Views
 
         private void buttonStacje_Click(object sender, EventArgs e)
         {
-            var form = new ListaStacji(_controller.getConnection());
-            form.ShowDialog();
+           // var form = new ListaStacji(_controller.getConnection());
+            //form.ShowDialog();
         }
 
         private void buttonUsterki_Click(object sender, EventArgs e)

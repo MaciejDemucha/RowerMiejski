@@ -17,12 +17,14 @@ namespace RowerMiejski.Views
         private readonly ViewController _viewController;
         private readonly UserController _userController;
         private readonly int _id;
-        public Rowery(SqlConnection connection, int id)
+        public WidokGlownyUzytkownik parent;
+        public Rowery(SqlConnection connection, int id, WidokGlownyUzytkownik Parent)
         {
             InitializeComponent();
             _viewController = new ViewController(connection);
             _userController = new UserController(connection);
             _id = id;
+            parent = Parent;
             RefreshDataGrid();
         }
 
@@ -38,7 +40,10 @@ namespace RowerMiejski.Views
             if (id != null)
             {
                 _userController.wypozyczRower((int)id);
+                parent.idWybranegoRoweru = (int)id;
+                parent.startTimer();
                 RefreshDataGrid();
+                this.Close();
             }
             else
             {

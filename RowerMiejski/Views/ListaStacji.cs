@@ -17,10 +17,12 @@ namespace RowerMiejski.Views
     {
         private readonly Stacja _stacja;
         private readonly ViewController _controller;
-        public ListaStacji(SqlConnection connection)
+        public WidokGlownyUzytkownik parent;
+        public ListaStacji(SqlConnection connection, WidokGlownyUzytkownik Parent)
         {
             InitializeComponent();
             _controller = new ViewController(connection);
+            parent = Parent;
             RefreshDataGrid();
         }
         private void RefreshDataGrid()
@@ -35,7 +37,7 @@ namespace RowerMiejski.Views
             
             if (id != null)
             {
-                var form = new Rowery(_controller.getConnection(), (int)id);
+                var form = new Rowery(_controller.getConnection(), (int)id, this.parent);
                 form.ShowDialog();
             }
             else

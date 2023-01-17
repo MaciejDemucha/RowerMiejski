@@ -19,6 +19,7 @@ namespace RowerMiejski.Views
         System.Timers.Timer timer;
         private readonly UserController _controller; 
         private readonly Uzytkownik _user;
+        public int? idWybranegoRoweru;
         public WidokGlownyUzytkownik(SqlConnection connection)
         {
             InitializeComponent();         
@@ -40,7 +41,7 @@ namespace RowerMiejski.Views
 
         private void buttonStacje_Click(object sender, EventArgs e)
         {
-            var form = new ListaStacji(_controller.getConnection());
+            var form = new ListaStacji(_controller.getConnection(), this);
             form.ShowDialog();
         }
 
@@ -67,10 +68,25 @@ namespace RowerMiejski.Views
 
         private void buttonZwrocRower_Click(object sender, EventArgs e)
         {
-            using(var form = new WyborStacji(_controller.getConnection()))
+            if(idWybranegoRoweru != null)
             {
-                form.ShowDialog();
+                using (var form = new WyborStacji(_controller.getConnection()))
+                {
+                    if (form.ShowDialog() == DialogResult.OK)
+                    {
+                        int stacjaId = form.stacja;
+                        _controller.zwrocRower((int)idWybranegoRoweru, stacjaId);
+                        idWybranegoRoweru = null;
+                        setBalanceLabel();
+                        stopTimer();
+                    }
+                }
             }
+            else
+            {
+                MessageBox.Show("Nie wypożyczyłeś roweru");
+            }
+           
         }
 
         private void WidokGlownyUzytkownik_Load(object sender, EventArgs e)
@@ -78,7 +94,19 @@ namespace RowerMiejski.Views
             timer = new System.Timers.Timer();
             timer.Interval = 1000;
             timer.Elapsed += OnTimeEvent;
-           // timer.Start();
+           
+        }
+
+        public void startTimer()
+        {
+             timer.Start();
+        }
+
+        public void stopTimer()
+        {
+            timer.Stop();
+            h = m = s = 0;
+            timeLabel.Text = string.Format("{0}:{1}:{2}", h.ToString().PadLeft(2, '0'), m.ToString().PadLeft(2, '0'), s.ToString().PadLeft(2, '0'));
         }
         private void OnTimeEvent(object sender, System.Timers.ElapsedEventArgs e)
         {
