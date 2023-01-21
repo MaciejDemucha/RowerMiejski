@@ -4,6 +4,9 @@
     <Compile Update="Views\DaneOsobiste.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Views\DanePracownik.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Views\ListaStacji.cs">
       <SubType>Form</SubType>
     </Compile>

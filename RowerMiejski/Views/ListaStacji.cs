@@ -30,7 +30,6 @@ namespace RowerMiejski.Views
         }
         private void stacjaDataGridView_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            MessageBox.Show("APPERANECE");
             int selectedrowindex = stacjeDataGridView.SelectedCells[0].RowIndex;
             DataGridViewRow selectedRow = stacjeDataGridView.Rows[selectedrowindex];
             int stacjaId = Convert.ToInt32(selectedRow.Cells[0].Value);

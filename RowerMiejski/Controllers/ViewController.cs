@@ -89,5 +89,13 @@ namespace RowerMiejski.Controllers
             adapter.Fill(output);
             return output;
         }
+        public DataTable getTypy()
+        {
+            var query = $"SELECT * FROM Typ_roweru";
+            var adapter = new SqlDataAdapter(query, Connection);
+            var output = new DataTable();
+            adapter.Fill(output);
+            return output;
+        }
     }
 }

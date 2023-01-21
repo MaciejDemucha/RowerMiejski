@@ -89,6 +89,7 @@ namespace RowerMiejski.Views
             this.buttonKonto.TabIndex = 4;
             this.buttonKonto.Text = "Konto";
             this.buttonKonto.UseVisualStyleBackColor = true;
+            this.buttonKonto.Click += new System.EventHandler(this.buttonKonto_Click);
             // 
             // WidokGlownyPracownik
             // 
