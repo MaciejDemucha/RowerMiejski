@@ -42,6 +42,26 @@ namespace RowerMiejski.Controllers
             adapter.Fill(output);
             return output;
         }
+        public DataTable getListaMoichUsterek()
+        {
+            int pracownik_Id = -1;
+            var prequery = $"SELECT Id FROM pracownik_view_employee";
+            Connection.Open();
+            var precmd = new SqlCommand(prequery, Connection);
+            var prereader = precmd.ExecuteReader();
+            while (prereader.Read())
+            {
+                pracownik_Id = prereader.GetInt32(0);
+            }
+            Connection.Close();
+
+
+            var query = $"EXEC wyswietl_liste_usterek_dla_pracownika @pracownik = {pracownik_Id}";
+            var adapter = new SqlDataAdapter(query, Connection);
+            var output = new DataTable();
+            adapter.Fill(output);
+            return output;
+        }
 
         public DataTable getHistoriaWypozyczen()
         {

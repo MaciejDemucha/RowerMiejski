@@ -58,6 +58,7 @@ namespace RowerMiejski.Views
             {
                 MessageBox.Show("Wybierz stację");
             }
+            RefreshDataGrid();
         }
     }
 }

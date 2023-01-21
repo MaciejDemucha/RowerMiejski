@@ -6,40 +6,38 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace RowerMiejski.Views
 {
-    public partial class Usterki : Form
+    public partial class MojeUsterki : Form
     {
         private readonly Usterka _usterka;
         private readonly ViewController _controller;
         private readonly EmployeeController _employeeController;
-        public Usterki(SqlConnection connection)
+
+        public MojeUsterki(SqlConnection connection)
         {
             InitializeComponent();
             _controller = new ViewController(connection);
             _employeeController = new EmployeeController(connection);
             RefreshDataGrid();
         }
-
         private void RefreshDataGrid()
         {
-            var dataTable = _controller.getListaUsterek();
-            usterkiDataGridView.DataSource = dataTable;
-            usterkiDataGridView.ReadOnly = true;
+            var dataTable = _controller.getListaMoichUsterek();
+            mojeUsterkiDataGridView.DataSource = dataTable;
+            mojeUsterkiDataGridView.ReadOnly = true;
         }
 
-        private void buttonVerify_Click(object sender, EventArgs e)
+        private void buttonReject_Click(object sender, EventArgs e)
         {
-            var id = usterkiDataGridView.SelectedRows[0].Cells[0].Value;
+            var id = mojeUsterkiDataGridView.SelectedRows[0].Cells[0].Value;
 
-            if(id != null)
+            if (id != null)
             {
-                _employeeController.zweryfikujUsterke((int)id);
+                _employeeController.usunUsterke((int)id);
                 RefreshDataGrid();
             }
             else
@@ -47,12 +45,5 @@ namespace RowerMiejski.Views
                 MessageBox.Show("Wybierz usterke!");
             }
         }
-
-        private void buttonMoje_Click(object sender, EventArgs e)
-        {
-            var form = new MojeUsterki(_controller.getConnection());
-            form.ShowDialog();
-        }
     }
 }
-

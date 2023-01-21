@@ -30,50 +30,43 @@ namespace RowerMiejski.Views
         private void InitializeComponent()
         {
             this.usterkiDataGridView = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.buttonMojeUsterki = new System.Windows.Forms.Button();
+            this.buttonVerify = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.usterkiDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // usterkiDataGridView
             // 
+            this.usterkiDataGridView.AllowUserToAddRows = false;
             this.usterkiDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.usterkiDataGridView.Location = new System.Drawing.Point(42, 28);
             this.usterkiDataGridView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.usterkiDataGridView.Name = "usterkiDataGridView";
             this.usterkiDataGridView.RowHeadersWidth = 51;
+            this.usterkiDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.usterkiDataGridView.Size = new System.Drawing.Size(620, 218);
             this.usterkiDataGridView.TabIndex = 0;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(278, 276);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(91, 28);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Zweryfikuj";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(499, 276);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(93, 28);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Odrzuć";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // buttonMojeUsterki
             // 
-            this.buttonMojeUsterki.Location = new System.Drawing.Point(66, 276);
+            this.buttonMojeUsterki.Location = new System.Drawing.Point(152, 274);
             this.buttonMojeUsterki.Name = "buttonMojeUsterki";
             this.buttonMojeUsterki.Size = new System.Drawing.Size(85, 26);
             this.buttonMojeUsterki.TabIndex = 3;
             this.buttonMojeUsterki.Text = "Moje usterki";
             this.buttonMojeUsterki.UseVisualStyleBackColor = true;
+            this.buttonMojeUsterki.Click += new System.EventHandler(this.buttonMoje_Click);
+            // 
+            // buttonVerify
+            // 
+            this.buttonVerify.Location = new System.Drawing.Point(462, 274);
+            this.buttonVerify.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonVerify.Name = "buttonVerify";
+            this.buttonVerify.Size = new System.Drawing.Size(91, 28);
+            this.buttonVerify.TabIndex = 1;
+            this.buttonVerify.Text = "Zweryfikuj";
+            this.buttonVerify.UseVisualStyleBackColor = true;
+            this.buttonVerify.Click += new System.EventHandler(this.buttonVerify_Click);
             // 
             // Usterki
             // 
@@ -81,8 +74,7 @@ namespace RowerMiejski.Views
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(700, 338);
             this.Controls.Add(this.buttonMojeUsterki);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonVerify);
             this.Controls.Add(this.usterkiDataGridView);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Usterki";
@@ -95,8 +87,7 @@ namespace RowerMiejski.Views
         #endregion
 
         private System.Windows.Forms.DataGridView usterkiDataGridView;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button buttonMojeUsterki;
+        private System.Windows.Forms.Button buttonVerify;
     }
 }
