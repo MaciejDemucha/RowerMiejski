@@ -36,32 +36,47 @@ namespace RowerMiejski.Views
 
         private void buttonWypozycz_Click(object sender, EventArgs e)
         {
-            var id = dataGridViewRowery.SelectedRows[0].Cells[0].Value;
-            if (id != null)
+            if (dataGridViewRowery.Rows.Count == 0)
             {
-                _userController.wypozyczRower((int)id);
-                parent.idWybranegoRoweru = (int)id;
-                parent.startTimer();
-                RefreshDataGrid();
-                this.Close();
+                MessageBox.Show("Brak dostępnych rowerów na stacji!");
             }
             else
             {
-                MessageBox.Show("Wybierz rower");
+                var id = dataGridViewRowery.SelectedRows[0].Cells[0].Value;
+                if (id != null)
+                {
+                    _userController.wypozyczRower((int)id);
+                    parent.idWybranegoRoweru = (int)id;
+                    parent.startTimer();
+                    parent.setBalanceLabel();
+                    RefreshDataGrid();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Wybierz rower");
+                }
             }
         }
 
         private void buttonUsterka_Click(object sender, EventArgs e)
         {
-            var id = dataGridViewRowery.SelectedRows[0].Cells[0].Value;
-            if (id != null)
+            if (dataGridViewRowery.Rows.Count == 0)
             {
-                _userController.zglosUsterke((int)id);
-                RefreshDataGrid();
+                MessageBox.Show("Brak dostępnych rowerów na stacji!");
             }
             else
             {
-                MessageBox.Show("Wybierz rower");
+                var id = dataGridViewRowery.SelectedRows[0].Cells[0].Value;
+                if (id != null)
+                {
+                    _userController.zglosUsterke((int)id);
+                    RefreshDataGrid();
+                }
+                else
+                {
+                    MessageBox.Show("Wybierz rower");
+                }
             }
         }
     }

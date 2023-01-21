@@ -26,11 +26,18 @@ namespace RowerMiejski.Views
             _controller = new UserController(connection);
             _user = new Uzytkownik(/*_controller.GetUzytkownikId(_username),*/ _controller.getUsername(), _controller.getName(), _controller.getSurname(), _controller.getPhone(), _controller.getEmail(), _controller.getBirthDate(), _controller.getBalans());
             setBalanceLabel();
+
         }
 
-        private void setBalanceLabel()
+        public void setBalanceLabel()
         {
             labelBalance.Text = _controller.getBalans() + " zł";
+            String rentedBike = _controller.getWypozyczonyRower();
+            if (rentedBike == "")
+                labelBike.Text = "Brak";
+            else
+                labelBike.Text = rentedBike;
+            labelPrice.Text = _controller.getKosztWypozyczenia().ToString();
         }
 
         private void buttonKonto_Click(object sender, EventArgs e)
@@ -68,23 +75,23 @@ namespace RowerMiejski.Views
 
         private void buttonZwrocRower_Click(object sender, EventArgs e)
         {
-            if(idWybranegoRoweru != null)
+            if(_controller.czyWypozyczony() == "")
+            {
+                MessageBox.Show("Nie wypożyczyłeś roweru");
+            }
+            else
             {
                 using (var form = new WyborStacji(_controller.getConnection()))
                 {
                     if (form.ShowDialog() == DialogResult.OK)
                     {
                         int stacjaId = form.stacja;
-                        _controller.zwrocRower((int)idWybranegoRoweru, stacjaId);
+                        _controller.zwrocRower(stacjaId);
                         idWybranegoRoweru = null;
                         setBalanceLabel();
                         stopTimer();
                     }
                 }
-            }
-            else
-            {
-                MessageBox.Show("Nie wypożyczyłeś roweru");
             }
            
         }
@@ -94,12 +101,22 @@ namespace RowerMiejski.Views
             timer = new System.Timers.Timer();
             timer.Interval = 1000;
             timer.Elapsed += OnTimeEvent;
-           
+            setBalanceLabel();
         }
 
         public void startTimer()
         {
              timer.Start();
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelBike_Click(object sender, EventArgs e)
+        {
+
         }
 
         public void stopTimer()

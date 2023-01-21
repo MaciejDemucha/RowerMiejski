@@ -39,23 +39,21 @@ namespace RowerMiejski.Views
             this.stacjeDataGridView.AllowUserToAddRows = false;
             this.stacjeDataGridView.AllowUserToDeleteRows = false;
             this.stacjeDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.stacjeDataGridView.Location = new System.Drawing.Point(63, 39);
-            this.stacjeDataGridView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.stacjeDataGridView.Location = new System.Drawing.Point(72, 52);
             this.stacjeDataGridView.MultiSelect = false;
             this.stacjeDataGridView.Name = "stacjeDataGridView";
             this.stacjeDataGridView.ReadOnly = true;
             this.stacjeDataGridView.RowHeadersWidth = 51;
             this.stacjeDataGridView.RowTemplate.Height = 29;
             this.stacjeDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.stacjeDataGridView.Size = new System.Drawing.Size(588, 253);
+            this.stacjeDataGridView.Size = new System.Drawing.Size(672, 337);
             this.stacjeDataGridView.TabIndex = 0;
             // 
             // buttonShowBikes
             // 
-            this.buttonShowBikes.Location = new System.Drawing.Point(271, 309);
-            this.buttonShowBikes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonShowBikes.Location = new System.Drawing.Point(310, 412);
             this.buttonShowBikes.Name = "buttonShowBikes";
-            this.buttonShowBikes.Size = new System.Drawing.Size(162, 22);
+            this.buttonShowBikes.Size = new System.Drawing.Size(185, 29);
             this.buttonShowBikes.TabIndex = 1;
             this.buttonShowBikes.Text = "Wyświetl rowery na stacji";
             this.buttonShowBikes.UseVisualStyleBackColor = true;
@@ -63,12 +61,11 @@ namespace RowerMiejski.Views
             // 
             // ListaStacji
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(700, 349);
+            this.ClientSize = new System.Drawing.Size(800, 465);
             this.Controls.Add(this.buttonShowBikes);
             this.Controls.Add(this.stacjeDataGridView);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ListaStacji";
             this.Text = "ListaStacji";
             ((System.ComponentModel.ISupportInitialize)(this.stacjeDataGridView)).EndInit();

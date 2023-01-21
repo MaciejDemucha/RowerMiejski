@@ -21,6 +21,7 @@ namespace RowerMiejski.Views
             InitializeComponent();
             _controller = new LoginController();
             textBoxPassword.PasswordChar = '*';
+            buttonRegister.Click += buttonregister_Click;
         }
 
         private void buttonLogin_Click(object sender, EventArgs e)
@@ -38,6 +39,38 @@ namespace RowerMiejski.Views
             else
                 form = new WidokGlownyPracownik(_controller.getConnection());
             form.ShowDialog();
+        }
+        private void buttonregister_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(textBoxNameReg.Text) || string.IsNullOrEmpty(textBoxPasswordReg.Text)
+                || string.IsNullOrEmpty(textBoxPasswordRegRepeat.Text) || string.IsNullOrEmpty(textBoxClientName.Text)
+                || string.IsNullOrEmpty(textBoxSurname.Text) || string.IsNullOrEmpty(textBoxPhone.Text)
+                || string.IsNullOrEmpty(textBoxEmail.Text) || string.IsNullOrEmpty(textBoxDatebirth.Text))
+            {
+                MessageBox.Show("Wypełnij wszystkie wymagane pola!");
+            }
+            else
+            {
+                String username = textBoxNameReg.Text;
+                String password = textBoxPasswordReg.Text;
+                String passwordrepeat = textBoxPasswordRegRepeat.Text;
+                String name = textBoxClientName.Text;
+                String surname = textBoxSurname.Text;
+                int phone = Convert.ToInt32(textBoxPhone.Text);
+                String email = textBoxEmail.Text;
+                var parsedDate = DateTime.Parse(textBoxDatebirth.Text);
+                DateTime datebirth = parsedDate;
+                double balance = 0;
+
+                if (passwordrepeat != password)
+                {
+                    MessageBox.Show("Pole hasło musi mieć tą samą wartość, co pole powtórzone hasło!");
+                }
+                else
+                {
+                    _controller.register(username, password, name, surname, phone, email, datebirth, balance);
+                }
+            }
         }
     }
 }

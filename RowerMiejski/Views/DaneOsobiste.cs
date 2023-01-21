@@ -52,6 +52,9 @@ namespace RowerMiejski.Views
             saveChanges();
             _controller.UpdateUzytkownik(_user, oldUsername);
             oldUsername = textBoxUsername.Text;
+            const string message = "Pomyślnie zmieniono dane!";
+            const string caption = "Zmiana danych";
+            MessageBox.Show(message, caption, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

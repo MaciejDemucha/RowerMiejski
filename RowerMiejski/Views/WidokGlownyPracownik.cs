@@ -15,6 +15,7 @@ namespace RowerMiejski.Views
     public partial class WidokGlownyPracownik : Form
     {
         private readonly EmployeeController _controller;
+        private readonly WidokGlownyUzytkownik parent;
         public WidokGlownyPracownik(SqlConnection connection)
         {
             InitializeComponent();
@@ -29,8 +30,9 @@ namespace RowerMiejski.Views
 
         private void buttonStacje_Click(object sender, EventArgs e)
         {
-           // var form = new ListaStacji(_controller.getConnection());
-            //form.ShowDialog();
+           var form = new ListaStacji(_controller.getConnection(), parent);
+            form.ShowDialog();
+            //form.
         }
 
         private void buttonUsterki_Click(object sender, EventArgs e)

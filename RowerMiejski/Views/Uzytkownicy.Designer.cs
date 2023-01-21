@@ -36,20 +36,20 @@ namespace RowerMiejski.Views
             // 
             // dataGridViewUsers
             // 
+            this.dataGridViewUsers.AllowUserToAddRows = false;
             this.dataGridViewUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewUsers.Location = new System.Drawing.Point(43, 22);
-            this.dataGridViewUsers.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridViewUsers.Location = new System.Drawing.Point(49, 29);
             this.dataGridViewUsers.Name = "dataGridViewUsers";
             this.dataGridViewUsers.RowHeadersWidth = 51;
-            this.dataGridViewUsers.Size = new System.Drawing.Size(618, 226);
+            this.dataGridViewUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewUsers.Size = new System.Drawing.Size(706, 301);
             this.dataGridViewUsers.TabIndex = 0;
             // 
             // buttonWypozyczenia
             // 
-            this.buttonWypozyczenia.Location = new System.Drawing.Point(264, 273);
-            this.buttonWypozyczenia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonWypozyczenia.Location = new System.Drawing.Point(302, 364);
             this.buttonWypozyczenia.Name = "buttonWypozyczenia";
-            this.buttonWypozyczenia.Size = new System.Drawing.Size(149, 38);
+            this.buttonWypozyczenia.Size = new System.Drawing.Size(170, 51);
             this.buttonWypozyczenia.TabIndex = 1;
             this.buttonWypozyczenia.Text = "Wypożyczenia klienta";
             this.buttonWypozyczenia.UseVisualStyleBackColor = true;
@@ -57,12 +57,11 @@ namespace RowerMiejski.Views
             // 
             // Uzytkownicy
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(700, 338);
+            this.ClientSize = new System.Drawing.Size(800, 451);
             this.Controls.Add(this.buttonWypozyczenia);
             this.Controls.Add(this.dataGridViewUsers);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Uzytkownicy";
             this.Text = "Uzytkownicy";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUsers)).EndInit();

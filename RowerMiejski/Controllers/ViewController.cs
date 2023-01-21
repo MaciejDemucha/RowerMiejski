@@ -51,5 +51,14 @@ namespace RowerMiejski.Controllers
             adapter.Fill(output);
             return output;
         }
+
+        public DataTable getKlienci()
+        {
+            var query = "SELECT * FROM Klient";
+            var adapter = new SqlDataAdapter(query, Connection);
+            var output = new DataTable();
+            adapter.Fill(output);
+            return output;
+        }
     }
 }
