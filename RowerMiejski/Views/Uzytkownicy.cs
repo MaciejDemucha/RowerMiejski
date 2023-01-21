@@ -31,7 +31,10 @@ namespace RowerMiejski.Views
 
         private void buttonWypozyczenia_Click(object sender, EventArgs e)
         {
-
+            string type = dataGridViewUsers.SelectedRows[0].Cells[0].Value.ToString();
+            int Id = Convert.ToInt32(type);
+            
+            var form = new Wypozyczenia(_viewController.getConnection(), Id);
         }
     }
 }

@@ -20,6 +20,10 @@ namespace RowerMiejski.Views
             }
             base.Dispose(disposing);
         }
+        public System.Windows.Forms.DataGridView getStacjeDataGridView()
+        {
+            return stacjeDataGridView;
+        }
 
         #region Windows Form Designer generated code
 
@@ -77,5 +81,6 @@ namespace RowerMiejski.Views
 
         private System.Windows.Forms.DataGridView stacjeDataGridView;
         private System.Windows.Forms.Button buttonShowBikes;
+
     }
 }

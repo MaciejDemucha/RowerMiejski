@@ -17,12 +17,26 @@ namespace RowerMiejski.Views
     {
         private readonly Stacja _stacja;
         private readonly ViewController _controller;
-        public WidokGlownyUzytkownik parent;
+        private readonly EmployeeController _employeeController;
+        private WidokGlownyUzytkownik parent;
         public ListaStacji(SqlConnection connection, WidokGlownyUzytkownik Parent)
         {
             InitializeComponent();
             _controller = new ViewController(connection);
+            _employeeController = new EmployeeController(connection);
             parent = Parent;
+            RefreshDataGrid();
+            stacjeDataGridView.CellValueChanged += new DataGridViewCellEventHandler(stacjaDataGridView_CellValueChanged);
+        }
+        private void stacjaDataGridView_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            MessageBox.Show("APPERANECE");
+            int selectedrowindex = stacjeDataGridView.SelectedCells[0].RowIndex;
+            DataGridViewRow selectedRow = stacjeDataGridView.Rows[selectedrowindex];
+            int stacjaId = Convert.ToInt32(selectedRow.Cells[0].Value);
+
+            DataGridViewCell selectedCell = stacjeDataGridView.CurrentCell;
+            _employeeController.modyfikujDaneStacji(selectedCell, stacjaId);
             RefreshDataGrid();
         }
         private void RefreshDataGrid()

@@ -55,7 +55,6 @@ namespace RowerMiejski.Views
         private void buttonHistory_Click(object sender, EventArgs e)
         {
             var form = new Wypozyczenia(_controller.getConnection());
-            form.ShowDialog();
         }
 
         private void buttonMoney_Click(object sender, EventArgs e)

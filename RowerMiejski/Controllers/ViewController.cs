@@ -60,5 +60,14 @@ namespace RowerMiejski.Controllers
             adapter.Fill(output);
             return output;
         }
+
+        public DataTable getWypozyczeniaKlienta(int Id)
+        {
+            var query = $"SELECT * FROM Wypożyczenie WHERE Klient_Id = {Id}";
+            var adapter = new SqlDataAdapter(query, Connection);
+            var output = new DataTable();
+            adapter.Fill(output);
+            return output;
+        }
     }
 }

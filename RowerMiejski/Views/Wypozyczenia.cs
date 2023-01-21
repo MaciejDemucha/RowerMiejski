@@ -17,16 +17,25 @@ namespace RowerMiejski.Views
     {
         private readonly Wypozyczenie _wypozyczenie;
         private readonly ViewController _controller;
-        public Wypozyczenia(SqlConnection connection)
+        public Wypozyczenia(SqlConnection connection, int Id = -1)
         {
             InitializeComponent();
             _controller = new ViewController(connection);
-            RefreshDataGrid();
+            RefreshDataGrid(Id);
+            this.ShowDialog();
         }
-        private void RefreshDataGrid()
+        private void RefreshDataGrid(int Id = -1)
         {
-            var dataTable = _controller.getHistoriaWypozyczen();
-            dataGridViewHistoria.DataSource = dataTable;
+            try
+            {
+                var dataTable = _controller.getHistoriaWypozyczen();
+                dataGridViewHistoria.DataSource = dataTable;
+            }
+            catch (SqlException e)
+            {
+                var dataTable = _controller.getWypozyczeniaKlienta(Id);
+                dataGridViewHistoria.DataSource = dataTable;
+            }
         }
     }
 }
