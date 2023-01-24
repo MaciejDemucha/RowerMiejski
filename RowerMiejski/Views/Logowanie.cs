@@ -45,7 +45,7 @@ namespace RowerMiejski.Views
             if (string.IsNullOrEmpty(textBoxNameReg.Text) || string.IsNullOrEmpty(textBoxPasswordReg.Text)
                 || string.IsNullOrEmpty(textBoxPasswordRegRepeat.Text) || string.IsNullOrEmpty(textBoxClientName.Text)
                 || string.IsNullOrEmpty(textBoxSurname.Text) || string.IsNullOrEmpty(textBoxPhone.Text)
-                || string.IsNullOrEmpty(textBoxEmail.Text) || string.IsNullOrEmpty(textBoxDatebirth.Text))
+                || string.IsNullOrEmpty(textBoxEmail.Text) || string.IsNullOrEmpty(textBoxDatebirth.Text) || textBoxPhone.TextLength != 9)
             {
                 MessageBox.Show("Wypełnij wszystkie wymagane pola!");
             }
@@ -58,8 +58,17 @@ namespace RowerMiejski.Views
                 String surname = textBoxSurname.Text;
                 int phone = Convert.ToInt32(textBoxPhone.Text);
                 String email = textBoxEmail.Text;
-                var parsedDate = DateTime.Parse(textBoxDatebirth.Text);
-                DateTime datebirth = parsedDate;
+                DateTime datebirth;
+                try
+                {
+                    var parsedDate = DateTime.Parse(textBoxDatebirth.Text);
+                    datebirth = parsedDate;
+                }
+                catch (FormatException ex)
+                {
+                    MessageBox.Show("Niepoprawny format danych!");
+                    return;
+                }
                 double balance = 0;
 
                 if (passwordrepeat != password)
