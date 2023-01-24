@@ -13,7 +13,6 @@ namespace RowerMiejski.Views
 {
     public partial class MojeUsterki : Form
     {
-        private readonly Usterka _usterka;
         private readonly ViewController _controller;
         private readonly EmployeeController _employeeController;
 

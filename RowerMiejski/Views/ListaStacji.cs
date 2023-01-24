@@ -15,7 +15,6 @@ namespace RowerMiejski.Views
 {
     public partial class ListaStacji : Form
     {
-        private readonly Stacja _stacja;
         private readonly ViewController _controller;
         private readonly EmployeeController _employeeController;
         private WidokGlownyUzytkownik parent;
