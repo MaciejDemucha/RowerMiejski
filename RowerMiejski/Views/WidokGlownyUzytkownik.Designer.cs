@@ -197,6 +197,7 @@ namespace RowerMiejski.Views
             this.Controls.Add(this.label1);
             this.Name = "WidokGlownyUzytkownik";
             this.Text = "WidokGlownyUzytkownik";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.widokGlownyUzytkownik_closing);
             this.Load += new System.EventHandler(this.WidokGlownyUzytkownik_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

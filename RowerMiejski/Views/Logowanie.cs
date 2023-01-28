@@ -81,5 +81,19 @@ namespace RowerMiejski.Views
                 }
             }
         }
+
+        private void logowanie_closing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Czy napewno chcesz wyjść z aplikacji?", "Wyjście z programu", MessageBoxButtons.YesNo);
+            switch (dr)
+            {
+                case DialogResult.Yes:
+                    e.Cancel = false;
+                    break;
+                case DialogResult.No:
+                    e.Cancel = true;
+                    break;
+            }
+        }
     }
 }

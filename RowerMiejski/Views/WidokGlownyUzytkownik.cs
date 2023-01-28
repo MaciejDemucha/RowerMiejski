@@ -118,6 +118,21 @@ namespace RowerMiejski.Views
 
         }
 
+        private void widokGlownyUzytkownik_closing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Czy napewno chcesz wyjść z aplikacji?", "Wyjście z programu", MessageBoxButtons.YesNo);
+            switch (dr)
+            {
+                case DialogResult.Yes:
+                    e.Cancel = false;
+                    Environment.Exit(0);
+                    break;
+                case DialogResult.No:
+                    e.Cancel = true;
+                    break;
+            }
+        }
+
         public void stopTimer()
         {
             timer.Stop();

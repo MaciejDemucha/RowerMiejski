@@ -276,6 +276,7 @@ namespace RowerMiejski.Views
             this.Controls.Add(this.label1);
             this.Name = "Logowanie";
             this.Text = "Logowanie";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.logowanie_closing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

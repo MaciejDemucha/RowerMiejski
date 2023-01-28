@@ -62,5 +62,20 @@ namespace RowerMiejski.Views
             var form = new DanePracownik(_controller.getConnection(), _user);
             form.ShowDialog();
         }
+
+        private void widokGlownyPracownik_closing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Czy napewno chcesz wyjść z aplikacji?", "Wyjście z programu", MessageBoxButtons.YesNo);
+            switch (dr)
+            {
+                case DialogResult.Yes:
+                    e.Cancel = false;
+                    Environment.Exit(0);
+                    break;
+                case DialogResult.No:
+                    e.Cancel = true;
+                    break;
+            }
+        }
     }
 }
