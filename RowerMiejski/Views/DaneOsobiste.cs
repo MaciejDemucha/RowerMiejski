@@ -63,7 +63,7 @@ namespace RowerMiejski.Views
                 MessageBox.Show("Niepoprawny format danych!");
                 throw new Exception();
             }
-            Regex imienazwisko = new Regex("[AaĄąBbCcĆćDdEeĘęFfGgHhIiJjKkLlŁłMmNnŃńOoÓóPpRrSsŚśTtUuWwYyZzŹźŻż] +$");
+            Regex imienazwisko = new Regex("^[\\s\\p{L}]+$");
             if (imienazwisko.IsMatch(textBoxName.Text) && imienazwisko.IsMatch(textBoxSurname.Text))
             {
                 _user.Imie = textBoxName.Text;
