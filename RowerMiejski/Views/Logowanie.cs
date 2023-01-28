@@ -33,18 +33,22 @@ namespace RowerMiejski.Views
             try
             {
                 _controller.login(username, password);
+
+                if (checkBoxEmployee.CheckState == CheckState.Unchecked)
+                    form = new WidokGlownyUzytkownik(_controller.getConnection());
+                else
+                    form = new WidokGlownyPracownik(_controller.getConnection());
+                this.Hide();
+                form.ShowDialog();
             }
-            catch
+            catch(SqlException ex)
             {
-                return;
+                MessageBox.Show("Nieprawidłowe dane!", "Błąd logowania", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                
             }
-           
-            this.Hide();
-            if (checkBoxEmployee.CheckState == CheckState.Unchecked)
-                form = new WidokGlownyUzytkownik(_controller.getConnection());
-            else
-                form = new WidokGlownyPracownik(_controller.getConnection());
-            form.ShowDialog();
+
+
+
         }
         private void buttonregister_Click(object sender, EventArgs e)
         {

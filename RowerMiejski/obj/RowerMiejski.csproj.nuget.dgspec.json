@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\STUDIA\\Semestr_V\\Bazy danych 2\\NOWA WERSJA\\RowerMiejski\\RowerMiejski\\RowerMiejski.csproj": {}
+    "C:\\Users\\macie\\Desktop\\RowerMiejski\\RowerMiejski\\RowerMiejski.csproj": {}
   },
   "projects": {
-    "D:\\STUDIA\\Semestr_V\\Bazy danych 2\\NOWA WERSJA\\RowerMiejski\\RowerMiejski\\RowerMiejski.csproj": {
+    "C:\\Users\\macie\\Desktop\\RowerMiejski\\RowerMiejski\\RowerMiejski.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\STUDIA\\Semestr_V\\Bazy danych 2\\NOWA WERSJA\\RowerMiejski\\RowerMiejski\\RowerMiejski.csproj",
+        "projectUniqueName": "C:\\Users\\macie\\Desktop\\RowerMiejski\\RowerMiejski\\RowerMiejski.csproj",
         "projectName": "RowerMiejski",
-        "projectPath": "D:\\STUDIA\\Semestr_V\\Bazy danych 2\\NOWA WERSJA\\RowerMiejski\\RowerMiejski\\RowerMiejski.csproj",
-        "packagesPath": "C:\\Users\\smich\\.nuget\\packages\\",
-        "outputPath": "D:\\STUDIA\\Semestr_V\\Bazy danych 2\\NOWA WERSJA\\RowerMiejski\\RowerMiejski\\obj\\",
+        "projectPath": "C:\\Users\\macie\\Desktop\\RowerMiejski\\RowerMiejski\\RowerMiejski.csproj",
+        "packagesPath": "C:\\Users\\macie\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\macie\\Desktop\\RowerMiejski\\RowerMiejski\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\smich\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\macie\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -51,11 +55,16 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[3.1.25, 3.1.25]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
@@ -64,7 +73,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -13,23 +13,14 @@ namespace RowerMiejski.Controllers
     {
         public void login(String username, string password)
         {
-            String conn = $@"Server=DESKTOP-1G68CG4;Database=RowerMiejski;Trusted_Connection=false;User Id={username};Password={password};";
+            String conn = $@"Server=LAPTOP-S2A0N94M\DEMUCHASQL;Database=RowerMiejski;Trusted_Connection=false;User Id={username};Password={password};";
             Connection = new SqlConnection(conn);
             string getid = "SELECT username FROM user WHERE username='" + username + "' AND password='" + password + "'";
-            try
-            {
-                Connection.Open();
-                Connection.Close();
-            }
-            catch(SqlException ex)
-            {
-                MessageBox.Show("Nieprawidłowe dane!", "Błąd logowania", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                throw new Exception();
-            }
+            
         }
         public void register(String username, string password, string name, string surname, int phone, string email, DateTime datebirth, double balance)
         {
-            String conn = $@"Server=DESKTOP-1G68CG4;Database=RowerMiejski;Trusted_Connection=true";
+            String conn = $@"Server=LAPTOP-S2A0N94M\DEMUCHASQL;Database=RowerMiejski;Trusted_Connection=true";
             Connection = new SqlConnection(conn);
 
             var query1 = $"CREATE LOGIN {username} WITH PASSWORD = '{password}'";
