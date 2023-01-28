@@ -25,7 +25,6 @@ namespace RowerMiejski.Views
             _employeeController = new EmployeeController(connection);
             parent = Parent;
             RefreshDataGrid();
-            stacjeDataGridView.CellValueChanged += new DataGridViewCellEventHandler(stacjaDataGridView_CellValueChanged);
         }
         private void stacjaDataGridView_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
@@ -34,7 +33,14 @@ namespace RowerMiejski.Views
             int stacjaId = Convert.ToInt32(selectedRow.Cells[0].Value);
 
             DataGridViewCell selectedCell = stacjeDataGridView.CurrentCell;
-            _employeeController.modyfikujDaneStacji(selectedCell, stacjaId);
+            try
+            {
+                _employeeController.modyfikujDaneStacji(selectedCell, stacjaId);
+            }
+            catch(Exception ex)
+            {
+                return;
+            }
             RefreshDataGrid();
         }
         private void RefreshDataGrid()
@@ -57,6 +63,11 @@ namespace RowerMiejski.Views
                 MessageBox.Show("Wybierz stację");
             }
             RefreshDataGrid();
+        }
+
+        private void listaStacji_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            MessageBox.Show("Nieprawidlowy format danych!");
         }
     }
 }

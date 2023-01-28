@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -90,12 +91,38 @@ namespace RowerMiejski.Controllers
         {
             var query =$"";
             if (selectedCell.ColumnIndex == 1)
-                query = $"UPDATE Adres SET Ulica = '{selectedCell.Value}' WHERE Id = {stacja_Id}";
+            {
+                Regex r = new Regex(@"^(?:[AaĄąBbCcĆćDdEeĘęFfGgHhIiJjKkLlŁłMmNnŃńOoÓóPpRrSsŚśTtUuWwYyZzŹźŻż]+)(?:[0-9 _]*)$");
+                if (r.IsMatch(selectedCell.Value.ToString()))
+                    query = $"UPDATE Adres SET Ulica = '{selectedCell.Value}' WHERE Id = {stacja_Id}";
+                else
+                {
+                    MessageBox.Show("Niepoprawny format adresu");
+                    throw new Exception();
+                }
+            }
             else if(selectedCell.ColumnIndex == 2)
-                query = $"UPDATE Adres SET Kod_pocztowy = '{selectedCell.Value}' WHERE Id = {stacja_Id}";
+            {
+                Regex r = new Regex(@"^[0-9]{2}-[0-9]{3}$");
+                if (r.IsMatch(selectedCell.Value.ToString()))
+                    query = $"UPDATE Adres SET Kod_pocztowy = '{selectedCell.Value}' WHERE Id = {stacja_Id}";
+                else
+                {
+                    MessageBox.Show("Niepoprawny format kodu pocztowego");
+                    throw new Exception();
+                }
+            }
             else if(selectedCell.ColumnIndex == 3)
-                query = $"UPDATE Stacja SET Miejsca = {selectedCell.Value} WHERE Id = {stacja_Id}";
-
+            {
+                Regex r = new Regex("^[0-9]*$");
+                if (r.IsMatch(selectedCell.Value.ToString()))
+                    query = $"UPDATE Stacja SET Miejsca = {selectedCell.Value} WHERE Id = {stacja_Id}";
+                else
+                {
+                    MessageBox.Show("Niepoprawny format");
+                    throw new Exception();
+                }
+            }
             Connection.Open();
             var cmd = new SqlCommand(query, Connection);
             cmd.ExecuteScalar();

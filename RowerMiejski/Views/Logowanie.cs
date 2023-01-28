@@ -30,9 +30,15 @@ namespace RowerMiejski.Views
             String password = textBoxPassword.Text;
             var form = new Form();
 
-            _controller.login(username, password);
+            try
+            {
+                _controller.login(username, password);
+            }
+            catch
+            {
+                return;
+            }
            
-
             this.Hide();
             if (checkBoxEmployee.CheckState == CheckState.Unchecked)
                 form = new WidokGlownyUzytkownik(_controller.getConnection());
@@ -45,7 +51,7 @@ namespace RowerMiejski.Views
             if (string.IsNullOrEmpty(textBoxNameReg.Text) || string.IsNullOrEmpty(textBoxPasswordReg.Text)
                 || string.IsNullOrEmpty(textBoxPasswordRegRepeat.Text) || string.IsNullOrEmpty(textBoxClientName.Text)
                 || string.IsNullOrEmpty(textBoxSurname.Text) || string.IsNullOrEmpty(textBoxPhone.Text)
-                || string.IsNullOrEmpty(textBoxEmail.Text) || string.IsNullOrEmpty(textBoxDatebirth.Text) || textBoxPhone.TextLength != 9)
+                || string.IsNullOrEmpty(textBoxEmail.Text) || string.IsNullOrEmpty(textBoxDatebirth.Text))
             {
                 MessageBox.Show("Wypełnij wszystkie wymagane pola!");
             }
@@ -56,7 +62,22 @@ namespace RowerMiejski.Views
                 String passwordrepeat = textBoxPasswordRegRepeat.Text;
                 String name = textBoxClientName.Text;
                 String surname = textBoxSurname.Text;
-                int phone = Convert.ToInt32(textBoxPhone.Text);
+                int phone = 0;
+
+                if (textBoxPhone.TextLength != 9)
+                {
+                    MessageBox.Show("Niepoprawny format danych!");
+                    return;
+                }
+                try
+                {
+                    phone = Convert.ToInt32(textBoxPhone.Text);
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("Niepoprawny format danych!");
+                    return;
+                }
                 String email = textBoxEmail.Text;
                 DateTime datebirth;
                 try

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.ComponentModel.Design.ObjectSelectorEditor;
 
 namespace RowerMiejski.Controllers
 {
@@ -12,8 +13,19 @@ namespace RowerMiejski.Controllers
     {
         public void login(String username, string password)
         {
-            String conn = $@"Server=DESKTOP-1G68CG4;Database=RowerMiejski;Trusted_Connection=false;Uid='{username}';Pwd='{password}';";
+            String conn = $@"Server=DESKTOP-1G68CG4;Database=RowerMiejski;Trusted_Connection=false;User Id={username};Password={password};";
             Connection = new SqlConnection(conn);
+            string getid = "SELECT username FROM user WHERE username='" + username + "' AND password='" + password + "'";
+            try
+            {
+                Connection.Open();
+                Connection.Close();
+            }
+            catch(SqlException ex)
+            {
+                MessageBox.Show("Nieprawidłowe dane!", "Błąd logowania", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw new Exception();
+            }
         }
         public void register(String username, string password, string name, string surname, int phone, string email, DateTime datebirth, double balance)
         {

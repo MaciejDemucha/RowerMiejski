@@ -41,22 +41,21 @@ namespace RowerMiejski.Views
             // 
             this.typyRowerowDataGridView.AllowUserToAddRows = false;
             this.typyRowerowDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.typyRowerowDataGridView.Location = new System.Drawing.Point(33, 28);
-            this.typyRowerowDataGridView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.typyRowerowDataGridView.Location = new System.Drawing.Point(38, 37);
             this.typyRowerowDataGridView.Name = "typyRowerowDataGridView";
             this.typyRowerowDataGridView.RowHeadersWidth = 51;
             this.typyRowerowDataGridView.RowTemplate.Height = 29;
-            this.typyRowerowDataGridView.Size = new System.Drawing.Size(633, 249);
+            this.typyRowerowDataGridView.Size = new System.Drawing.Size(723, 332);
             this.typyRowerowDataGridView.TabIndex = 0;
             this.typyRowerowDataGridView.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.typyRowerowCellValueChanged);
+            this.typyRowerowDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.typyRowerow_DataError);
             // 
             // TypyRowerow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(700, 338);
+            this.ClientSize = new System.Drawing.Size(800, 451);
             this.Controls.Add(this.typyRowerowDataGridView);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "TypyRowerow";
             this.Text = "TypyRowerow";
             ((System.ComponentModel.ISupportInitialize)(this.typyRowerowDataGridView)).EndInit();

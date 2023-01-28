@@ -41,5 +41,10 @@ namespace RowerMiejski.Views
             _employeeController.modyfikujTypRoweru(selectedCell, typRoweruId);
             RefreshDataGrid();
         }
+
+        private void typyRowerow_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            MessageBox.Show("Nieprawidlowy format danych!");
+        }
     }
 }

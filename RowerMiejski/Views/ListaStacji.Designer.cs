@@ -52,6 +52,8 @@ namespace RowerMiejski.Views
             this.stacjeDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.stacjeDataGridView.Size = new System.Drawing.Size(672, 337);
             this.stacjeDataGridView.TabIndex = 0;
+            this.stacjeDataGridView.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.stacjaDataGridView_CellValueChanged);
+            this.stacjeDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.listaStacji_DataError);
             // 
             // buttonShowBikes
             // 
