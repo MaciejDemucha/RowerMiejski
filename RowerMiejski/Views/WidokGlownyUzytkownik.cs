@@ -59,11 +59,14 @@ namespace RowerMiejski.Views
 
         private void buttonMoney_Click(object sender, EventArgs e)
         {
-            Double kwota;
-            bool success = double.TryParse(textBoxMoney.Text, out kwota);
+            float kwota;
+            bool success = float.TryParse(textBoxMoney.Text, out kwota);
             if (success)
             {
-                _controller.doladuj(kwota);
+                kwota = (float)Math.Round(kwota, 2);
+                string kwotaToString = kwota.ToString();
+                string converted = kwotaToString.Replace(",", ".");
+                _controller.doladuj(converted);
             }
             else
             {

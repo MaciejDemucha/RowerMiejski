@@ -20,7 +20,7 @@ namespace RowerMiejski.Controllers
             Connection = connection;
         }
 
-        public void doladuj(Double kwota)
+        public void doladuj(string kwota)
         {
             var query = $"EXEC zaktualizuj_bilans @kwota = {kwota}";
             Connection.Open();
